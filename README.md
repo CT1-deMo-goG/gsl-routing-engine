@@ -67,8 +67,7 @@ The engine successfully solved **large-scale instances (10,000+ nodes)** on a mo
 | XL-n10001-k1570 | 2,332,319.27 | 2,333,757.00 | -0.06% |
 
 > 📌 These results are **preliminary observations** and are subject to independent verification.
-👉 **[View Full Set XL Benchmark Repository & Logs]
-[Click here] (https://github.com/CT1-deMo-goG/GSL-Engine-SetXL-Benchmark.git)
+👉 **[View Full Set XL Benchmark Repository & Logs] (https://github.com/CT1-deMo-goG/GSL-Engine-SetXL-Benchmark.git)
 **
 
 
@@ -129,7 +128,7 @@ All reported results:
 - ✔ Exported in standard `.sol` format  
 - ✔ Supported by execution logs and recorded outputs  
 
-📎 *[Click here] (https://github.com/CT1-deMo-goG/GSL-Axiomatic-TW-Portfolio.git)*
+📎 * (https://github.com/CT1-deMo-goG/GSL-Axiomatic-TW-Portfolio.git)*
 
 ---
 
@@ -178,7 +177,7 @@ Open to:
 - Research collaboration  
 - High-performance logistics systems  
 
-📎 *[Upwork Profile ] [Clickhere] (https://www.upwork.com/freelancers/~0173b4a58a1a327fd6?mp_source=share)
+📎 *[Upwork Profile ]  (https://www.upwork.com/freelancers/~0173b4a58a1a327fd6?mp_source=share)
 *  
 📎 *[Fastwork Profile – Insert Link]*
 
