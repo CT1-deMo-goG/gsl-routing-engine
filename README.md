@@ -93,7 +93,16 @@ The engine successfully solved **large-scale instances (10,000+ nodes)** on a mo
 - Failure Rate: **0%**  
 - Output: Complete `.sol` files generated for all instances  
 
-📎 *[Insert Video Proof Link]*
+📎 ## Proof of Execution
+
+This video demonstrates large-scale execution of the GSL Engine on CVRPLib XML datasets (10,000 instances).
+
+- Continuous run
+- Full solution generation (.sol)
+- Zero-tuning approach
+
+Video:
+https://youtu.be/tx0dJpFlKNM
 
 ---
 
