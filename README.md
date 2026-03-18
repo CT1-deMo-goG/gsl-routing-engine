@@ -1,3 +1,4 @@
+[อ่านภาษาไทยคลิกที่นี่](README_TH.md)
 # GSL Engine 🚀
 
 **A proprietary, high-performance heuristic optimization engine for the Vehicle Routing Problem (VRP).**
