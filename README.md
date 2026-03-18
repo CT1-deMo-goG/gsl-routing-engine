@@ -140,6 +140,7 @@ All reported results:
 
 📎 [VRPTW Benchmark Portfolio](https://github.com/CT1-deMo-goG/GSL-Axiomatic-TW-Portfolio.git)
 
+📄 [Full Technical Report](Docs/technical_report.md)
 ---
 
 ## 🧠 Technical Strategy
