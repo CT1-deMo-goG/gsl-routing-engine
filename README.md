@@ -138,7 +138,7 @@ All reported results:
 - ✔ Exported in standard `.sol` format  
 - ✔ Supported by execution logs and recorded outputs  
 
-📎 * (https://github.com/CT1-deMo-goG/GSL-Axiomatic-TW-Portfolio.git)*
+📎 [VRPTW Benchmark Portfolio](https://github.com/CT1-deMo-goG/GSL-Axiomatic-TW-Portfolio.git)
 
 ---
 
