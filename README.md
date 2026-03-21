@@ -102,7 +102,7 @@ This video demonstrates large-scale execution of the GSL Engine on CVRPLib XML d
 - Zero-tuning approach
 
 Video:
-https://youtu.be/tx0dJpFlKNM
+https://youtu.be/rsIjlrckyxw
 
 ---
 
