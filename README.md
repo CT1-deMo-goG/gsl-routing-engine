@@ -85,7 +85,13 @@ The engine successfully solved **large-scale instances (10,000+ nodes)** on a mo
 | Set CMT | 14 | ~3.0% | < 0.10s |
 ---
 
+🔍 **Detailed Performance Analysis** For an in-depth evaluation of GSL Engine V22 against industry-standard benchmarks, visit the comparative study folder. This analysis provides the necessary engineering context for the results observed above:
 
+* **Comparative Context:** Methodology regarding BKS and State-of-the-art (HGS) baselines.
+* **GSL vs. LNS:** Analysis against Metaheuristic search (demonstrating 87% Win Rate in Set X).
+* **GSL vs. CW:** Time-Complexity validation showing $O(1)$ scalability vs. $O(N^2 \log N)$.
+
+👉 [**Access Comparative Study & Benchmark Reports**](./Benchmarks/Comparative_Study/README.md)
 
 ---
 
