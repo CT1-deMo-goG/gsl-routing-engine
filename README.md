@@ -180,14 +180,25 @@ The GSL Engine is designed not only as a solver but as a **scalable routing inte
 
 ---
 
-🚀 GSL-Solver Platform
-The Enterprise Route Optimization Portal Access the production-ready deterministic engine here:
-👉 gsl-solver.com
-💼 Professional Contact
-Independent Researcher: Chonmapoohm Thamsuwan (CTSuwan)
-📧 Email: ctsuwan@proton.me
-🤝 Services & Collaboration
+## 🚀 GSL-Solver Platform
+
+**The Enterprise Route Optimization Portal** Access the production-ready deterministic engine here:  
+👉 [**gsl-solver.com**](https://gsl-solver.com)
+
+---
+
+## 💼 Professional Contact
+
+**Independent Researcher:** Chonmapoohm Thamsuwan (CTSuwan)  
+📧 Email: [ctsuwan@proton.me](mailto:ctsuwan@proton.me)  
+
+---
+
+## 🤝 Services & Collaboration
+
 Open to professional engagement in the following areas:
-Logistics-as-a-Service (LaaS): Real-time route optimization for enterprise fleets.
-High-Precision Modeling: Custom algorithmic solutions for complex supply chain constraints.
-Technical Consultancy: Large-scale network stress-testing and optimization audits.
+
+- **Logistics-as-a-Service (LaaS):** Real-time route optimization for enterprise fleets.
+- **High-Precision Modeling:** Custom algorithmic solutions for complex supply chain constraints.
+- **Technical Consultancy:** Large-scale network stress-testing and optimization audits.
+- 
