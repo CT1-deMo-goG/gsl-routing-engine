@@ -180,21 +180,22 @@ The GSL Engine is designed not only as a solver but as a **scalable routing inte
 
 ---
 
-## 🚀 GSL-Solver Platform
+## GSL-Solver Platform
 
-**The Enterprise Route Optimization Portal** Access the production-ready deterministic engine here:  
-👉 [**gsl-solver.com**](https://gsl-solver.com)
+**The Enterprise Route Optimization Portal**
+Access the production-ready deterministic engine here:  
+[**https://gsl-solver.com**](https://gsl-solver.com)
 
 ---
 
-## 💼 Professional Contact
+## Professional Contact
 
 **Independent Researcher:** Chonmapoohm Thamsuwan (CTSuwan)  
-📧 Email: [ctsuwan@proton.me](mailto:ctsuwan@proton.me)  
+**Email:** [ctsuwan@proton.me](mailto:ctsuwan@proton.me)  
 
 ---
 
-## 🤝 Services & Collaboration
+## Services & Collaboration
 
 Open to professional engagement in the following areas:
 
