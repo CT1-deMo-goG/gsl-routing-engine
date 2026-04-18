@@ -159,24 +159,25 @@ GSL Engine ถูกออกแบบให้เป็น:
 
 ---
 
-## 💼 ติดต่อ
+## แพลตฟอร์ม GSL-Solver
 
-**ชนมภูมิ ธรรมสุวรรณ (CTSuwan)**  
-📧 ctsuwan@proton.me  
+**พอร์ทัลอัปติไมซ์เส้นทางระดับองค์กร (Enterprise Route Optimization Portal)**
+เข้าใช้งานเอนจิน Deterministic ระดับโปรดักชันที่พร้อมใช้งานจริงได้ที่นี่:  
+[**https://gsl-solver.com**](https://gsl-solver.com)
 
 ---
 
-## 🤝 ความร่วมมือ
+## ข้อมูลการติดต่อ
 
-เปิดรับ:
+**นักวิจัยอิสระ (Independent Researcher):** ชนม์ภูมิ ธรรมสุวรรณ (CTSuwan)  
+**อีเมล:** [ctsuwan@proton.me](mailto:ctsuwan@proton.me)  
 
-- งาน optimization ระดับอุตสาหกรรม  
-- งานวิจัยร่วม  
-- ระบบ routing เชิงพาณิชย์  
+---
 
-📎 *[Upwork]*   [Clickhere] (https://www.upwork.com/freelancers/~0173b4a58a1a327fd6?mp_source=share)
+## บริการและความร่วมมือทางธุรกิจ
 
+เปิดรับการร่วมงานและให้คำปรึกษาระดับมืออาชีพ ในขอบเขตดังต่อไปนี้:
 
-📎 *[Fastwork]*
-
-—
+- **Logistics-as-a-Service (LaaS):** บริการระบบประมวลผลเส้นทางแบบเรียลไทม์สำหรับฟลีทรถขนส่งระดับองค์กร
+- **High-Precision Modeling:** การออกแบบและพัฒนาอัลกอริทึมเฉพาะทาง สำหรับแก้ปัญหาซัพพลายเชนที่มีเงื่อนไข (Constraints) ซับซ้อนขั้นสูง
+- **Technical Consultancy:** บริการให้คำปรึกษาทางเทคนิค, ทดสอบขีดจำกัดระบบเครือข่ายขนาดใหญ่ (Stress-testing) และการตรวจสอบประเมินประสิทธิภาพการจัดเส้นทาง (Optimization audits)
