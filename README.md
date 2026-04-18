@@ -1,6 +1,7 @@
 [อ่านภาษาไทยคลิกที่นี่](README_TH.md)
 # GSL Engine
-A proprietary, high-performance heuristic optimization engine for the Vehicle Routing Problem (VRP).
+A proprietary, high-performance deterministic optimization engine for the Vehicle Routing Problem (VRP).
+
 
 The GSL Engine is a closed-source computational core designed to solve complex logistics optimization problems with strong efficiency and adaptability. 
 This repository serves as a performance portfolio, including benchmark verification, execution logs, and proof-of-capability.
