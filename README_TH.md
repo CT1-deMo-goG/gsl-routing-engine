@@ -169,7 +169,7 @@ GSL Engine ถูกออกแบบให้เป็น:
 
 ## ข้อมูลการติดต่อ
 
-**นักวิจัยอิสระ (Independent Researcher):** ชนม์ภูมิ ธรรมสุวรรณ (CTSuwan)  
+**นักวิจัยอิสระ (Independent Researcher):** ชนมภูมิ ธรรมสุวรรณ (CTSuwan)  
 **อีเมล:** [ctsuwan@proton.me](mailto:ctsuwan@proton.me)  
 
 ---
