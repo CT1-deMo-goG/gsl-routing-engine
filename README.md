@@ -1,4 +1,4 @@
-[อ่[อ่านภาษาไทยคลิกที่นี่](README_TH.md)
+[อ่านภาษาไทยคลิกที่นี่](README_TH.md)
 # GSL Engine
 **A high-performance deterministic optimization engine for the Vehicle Routing Problem (VRP).**
 
