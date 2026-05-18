@@ -87,7 +87,7 @@ Evaluated on Solomon and Homberger benchmarks using the same zero-tuning approac
 
 ## Technical Strategy
 - **Geometric Sensing:** Spatial clustering and route initialization via deterministic logic.
-- **Fleet Optimization (K-Focus):** Prioritizing vehicle minimization before distance refinement.
+- **Adaptive Fleet Structuring:** Dynamic workload balancing and high-density capacity packing to guarantee robust operational feasibility before executing structural distance refinement.
 - **Universal Parsing Core:** Robust ingestion of multiple data formats with auto-K detection.
 
 ---
