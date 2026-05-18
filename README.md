@@ -92,6 +92,17 @@ Evaluated on Solomon and Homberger benchmarks using the same zero-tuning approac
 
 ---
 
+## Problem Scope & Benchmark Specifications
+
+The core optimization module of the Geo Strategy Logistic (GSL) Engine is engineered strictly for the standard **Capacitated Vehicle Routing Problem (CVRP)**, focusing on maximizing fleet capacity utilization and minimizing overall Travel Distance (TD) under uniform demand profiles.
+
+### Technical Note on Legacy Benchmarks (e.g., CMT Series):
+* Certain legacy problem sets, such as the Christofides (CMT) series, contain multi-constraint profiles including implicit distance-duration ceilings (`DISTANCE` limits).
+* Current evaluation logs for these specific instances reflect the engine's performance under a **Capacity-Constrained Only** environment.
+* Advanced routing problems that require strict distance-ceiling enforcement or time-window integration are systematically separated into specialized routing layers (such as VRPTW / MDVRPTW modules) to maintain maximum computation speed and code modularity.
+
+*
+---
 ## GSL-Solver Platform
 **The Enterprise Route Optimization Portal** Access the production-ready engine here: [**https://gsl-solver.com**](https://gsl-solver.com)
 
