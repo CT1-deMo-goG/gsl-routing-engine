@@ -1,162 +1,179 @@
+[Read English Version](README.md)
+
 # GSL Engine
-เอนจินประมวลผลอัปติไมซ์แบบกำหนดผลลัพธ์แน่นอน (Deterministic) ประสิทธิภาพสูงที่เป็นกรรมสิทธิ์เฉพาะ สำหรับการแก้ปัญหาการจัดเส้นทางยานพาหนะ (VRP)
+**สถาปัตยกรรมเชิงกำหนดสำหรับการแก้ปัญหา Vehicle Routing Problem (VRP)**
 
-GSL Engine เป็นแกนประมวลผลแบบปิด (Closed-source) ที่ออกแบบมาเพื่อแก้ปัญหาโลจิสติกส์ที่ซับซ้อน ด้วยประสิทธิภาพและความสามารถในการปรับตัวขั้นสูง  
-Repository นี้จัดทำขึ้นเพื่อเป็นแฟ้มสะสมผลงานด้านประสิทธิภาพ (Performance Portfolio) โดยประกอบด้วยผลการทดสอบ (Benchmark verification), Log การทำงาน และหลักฐานเชิงประจักษ์ของความสามารถระบบ
+GSL Engine (Geo Strategy Logistic Engine) คือสถาปัตยกรรมการคำนวณแบบ proprietary ที่ออกแบบขึ้นเพื่อศึกษาวิธีการจัดเส้นทางโลจิสติกส์เชิงกำหนด (Deterministic Routing) สำหรับปัญหาการเพิ่มประสิทธิภาพด้านโลจิสติกส์ที่มีความซับซ้อนสูง
 
-**คำชี้แจง:** ไม่มีการเปิดเผยซอร์สโค้ดใน Repository นี้ เนื่องจากเป็นกรรมสิทธิ์เฉพาะ  
-โครงการนี้เปิดสำหรับความร่วมมือด้านงานวิจัยและการประยุกต์ใช้งานในอุตสาหกรรม
+Repository นี้ทำหน้าที่เป็นศูนย์กลางด้านผลงานวิจัย การทดสอบประสิทธิภาพ และบันทึกการประมวลผลของระบบ GSL โดยครอบคลุม VRP หลายรูปแบบ รวมถึงการทดสอบบนฮาร์ดแวร์ระดับ Mobile Edge
+
+**หมายเหตุ:** ซอร์สโค้ดหลักของระบบไม่ได้เปิดเผยสู่สาธารณะ Repository นี้เปิดสำหรับการแลกเปลี่ยนทางวิชาการ การวิจัย และการประยุกต์ใช้งานในระดับอุตสาหกรรม
 
 ---
 
-## สถาปัตยกรรมของเอนจินและรูปแบบปัญหาที่รองรับ
-GSL Engine ถูกออกแบบในลักษณะ Modular เพื่อรองรับปัญหา VRP หลายประเภท:
+## โครงสร้างระบบและประเภทปัญหาที่รองรับ
 
-- **CVRP (Capacitated VRP)** โมดูล: `GSL_CVRP_V22` -> ทดสอบและพร้อมใช้งานจริง (Deployed & Verified)
+GSL Engine ถูกออกแบบในลักษณะ Modular Architecture เพื่อรองรับ VRP หลายประเภทภายใต้แนวคิดการประมวลผลเชิงกำหนด (Deterministic Feasibility-Oriented Execution)
 
-- **VRPTW (VRP with Time Windows)** โมดูล: `GSL_VRPTW_V111` -> ทดสอบและพร้อมใช้งานจริง (Deployed & Verified)
-
-- **MDVRP (Multi-Depot VRP)** โมดูล: `GSL_MDVRP_MASTER_V28` -> ทดสอบและพร้อมใช้งานจริง (Deployed & Verified)
-
-- **MDVRPTW (Multi-Depot VRP with Time Windows)** โมดูล: `GSL_MDVRPTW_V38` & `GSL_MDVRPTW_REAL_V29` -> ทดสอบและพร้อมใช้งานจริง (Deployed & Verified)
-
-- **PDPTW (Pickup & Delivery with Time Windows)** สถานะ: อยู่ระหว่างพัฒนา (แกนหลักเสร็จสมบูรณ์ รอการทดสอบ Benchmark)
+- **CVRP (Capacitated VRP)** Module: `GSL_CVRP_V22`
+- **VRPTW (VRP with Time Windows)** Module: `GSL_VRPTW_V111`
+- **MDVRP (Multi-Depot VRP)** Module: `GSL_MDVRP_MASTER_V28`
+- **MDVRPTW (Multi-Depot VRP with Time Windows)** Modules: `GSL_MDVRPTW_V38` และ `GSL_MDVRPTW_REAL_V29`
+- **PDPTW (Pickup & Delivery with Time Windows)** อยู่ระหว่างการพัฒนา (Core Logic Completed)
 
 ---
 
 ## สภาพแวดล้อมการประมวลผล
-- **แพลตฟอร์ม:** Android (Mobile Edge)
-- **Runtime:** Python ผ่านแอป Pydroid 3  
-- **CPU:** สถาปัตยกรรม Snapdragon  
-- **รูปแบบการทำงาน:** Sequential / Batch Processing  
-- **การจัดการข้อจำกัด:** ตรวจสอบความถูกต้องแบบกำหนดแน่นอน 100% (Fully deterministic feasibility validation)
 
-*ระบบถูกออกแบบให้สามารถขยายสเกลข้ามข้อจำกัดของอุปกรณ์พกพา และสามารถนำไปติดตั้งบนเซิร์ฟเวอร์หรือระบบประมวลผลประสิทธิภาพสูงได้*
+- **Platform:** Android (Mobile Edge)
+- **Runtime:** Python ผ่าน Pydroid 3
+- **CPU:** Snapdragon Architecture (ARM-based)
+- **Execution Mode:** Sequential / Batch Processing
+- **Constraint Handling:** การตรวจสอบ Feasibility แบบ Deterministic โดยไม่ใช้การสุ่มเชิง stochastic
 
 ---
 
-## ความสำเร็จขั้นที่ 1: การทดสอบ CVRP (อ้างอิง CVRPLib)
-**โมดูล: GSL_CVRP_V22**
+## Milestone 1: CVRP Benchmark (CVRPLib-Based)
 
-**นโยบาย Zero-Tuning** ใช้สคริปต์เดียว (Single unified script) ในการรันทุกชุดข้อมูล:
-- ไม่มีการปรับแต่งพารามิเตอร์เฉพาะโจทย์  
-- ไม่มีการปรับจูนแบบแมนวลในแต่ละ instance  
-- ระบบประมวลผลและตัดสินใจโดยอัตโนมัติทั้งหมด  
-*แนวทางนี้แสดงถึงความทนทานและความสามารถในการประยุกต์ใช้ (Generalization) ของอัลกอริทึม*
+**Module:** `GSL_CVRP_V22`
 
-**การทดสอบขนาดใหญ่ (Set XL)** ระบบสามารถประมวลผลโจทย์ขนาดใหญ่ (10,000+ โหนด) บนอุปกรณ์พกพาได้สำเร็จ
+### Zero-Tuning Policy
 
-| Instance | ระยะทาง GSL | ค่าอ้างอิง BKS | ส่วนต่าง (Difference) |
-| :--- | :--- | :--- | :--- |
-| XL-n1374-k278 | 232,139.97 | 233,049.00 | -0.39% |
-| XL-n10001-k1570 | 2,332,319.27 | 2,333,757.00 | -0.06% |
+ระบบใช้ Execution Configuration เดียวกันกับทุก Dataset โดยไม่มีการปรับ Parameter เฉพาะราย Instance เพื่อศึกษาพฤติกรรมการทำงานข้ามชุดข้อมูลภายใต้โครงสร้างเดียวกัน
 
-*หมายเหตุ: ผลลัพธ์ข้างต้นเป็นการสังเกตเบื้องต้น และอยู่ระหว่างการตรวจสอบอิสระเพิ่มเติม* **ดูข้อมูล Benchmark และ Log ของ Set XL ทั้งหมด**
+---
 
-**สรุปความครอบคลุมของ Dataset**
-| Dataset | จำนวน Instances | Gap เฉลี่ยจาก BKS | เวลาในการประมวลผลเฉลี่ย |
+### Repository การทดสอบประสิทธิภาพ
+
+เพื่อความชัดเจนของข้อมูล Benchmark การทดสอบถูกแยกออกเป็น Repository เฉพาะทางดังนี้:
+
+* 📁 **[GSL-CVRP-SETX](https://github.com/CT1-deMo-goG/GSL-CVRP-SETX)**  
+  การทดสอบบน Uchoa Set X (100 - 1,000 Nodes)
+
+* 📁 **[GSL-CVRP-SETXL](https://github.com/CT1-deMo-goG/GSL-CVRP-SETXL)**  
+  การทดสอบ Hyper-Scale (1,000 - 10,001 Nodes)
+
+---
+
+### ตัวอย่างการทดสอบ Hyper-Scale (Set XL)
+
+ระบบสามารถสร้างคำตอบที่ผ่านเงื่อนไข Feasibility สำหรับโจทย์ขนาดใหญ่บนฮาร์ดแวร์ระดับ Mobile ได้
+
+| Instance | GSL Cost | Recorded BKS | Gap (%) | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| XL-n5406-k783 | 1,050,660.38 | 1,040,536.0 | +0.97% | FEASIBLE |
+| XL-n10001-k1570 | 2,432,382.86 | 2,333,757.0 | +4.23% | FEASIBLE |
+
+---
+
+### สรุปการครอบคลุม Dataset
+
+| Dataset | จำนวน Instance | Avg. Gap to BKS | Avg. Runtime |
 | :--- | :--- | :--- | :--- |
 | Set X (Uchoa) | 100 | ~7.5% | 0.20s – 1.00s |
+| Set XL (Hyper) | 100 | 1% – 15% | 6s – 2,172s |
 | Set Tai (Taillard) | 13 | ~4.5% | < 0.30s |
-| Golden / Li | 32 | 19% – 37% | 1s – 60s |
-| Set A, B, E, F, M, P | 95 | 4% – 12% | < 0.15s |
 | Set CMT | 14 | ~3.0% | < 0.10s |
 
-**การวิเคราะห์ประสิทธิภาพเชิงลึก** สำหรับบริบททางวิศวกรรมและการเปรียบเทียบกับ HGS, Metaheuristics (LNS) และการพิสูจน์ความซับซ้อนด้านเวลา (Time-Complexity $O(1)$) สามารถดูรายงานเชิงเปรียบเทียบได้ในระบบ
+---
 
-**การทดสอบความทนทาน (Large Batch Execution)**
-- จำนวนโจทย์ทั้งหมด: 10,000+ Instances
-- ชนิดข้อมูล: XML (โครงสร้างแบบ CVRPLib)
-- อัตราความล้มเหลว (Failure Rate): 0%
-- ผลลัพธ์: ระบบสร้างไฟล์ `.sol` สมบูรณ์สำหรับทุก instance
+### Proof of Execution
 
-**วิดีโอหลักฐานการประมวลผล** วิดีโอนี้แสดงการรัน GSL Engine กับไฟล์ XML จำนวน 10,000 ชุดแบบต่อเนื่อง (Continuous run) โดยไม่มีการจูนค่า:
-**ลิงก์วิดีโอ:** https://youtu.be/rsIjlrckyxw
+📹 **[Video Demonstration (10,000 Instances Run)](https://youtu.be/rsIjlrckyxw)**
 
 ---
 
-## ความสำเร็จขั้นที่ 2: การทดสอบ VRPTW
-**โมดูล: GSL_VRPTW_V111**
+## Milestone 2: VRPTW Benchmark
 
-ทดสอบกับชุดข้อมูลมาตรฐานระดับโลก Solomon และ Homberger ภายใต้นโยบาย Zero-Tuning 
+**Module:** `GSL_VRPTW_V111`
 
-**สรุปประสิทธิภาพ**
-| Dataset | ขนาดโจทย์ | อัตราการเทียบเท่า BKS | เวลาประมวลผลเฉลี่ย |
-| :--- | :--- | :--- | :--- |
-| Solomon-100 | เล็ก | 46.4% | ~2.78 วินาที |
-| Solomon-200 | กลาง | 51.7% | ~7.57 วินาที |
-| Homberger-400 | ใหญ่ | 35.0% | ~20.0 วินาที |
-| Homberger-600 | ใหญ่ | 30.0% | ~29.2 วินาที |
-| Homberger-800 | ใหญ่มาก | 35.0% | ~31.15 วินาที |
-| Homberger-1000 | ใหญ่มาก (1,000 โหนด) | 21.6% | ~38.22 วินาที |
+ระบบถูกทดสอบบนชุดข้อมูล Solomon และ Homberger ภายใต้แนวทาง Zero-Tuning เดียวกัน โดยผลลัพธ์ที่รายงานผ่านการตรวจสอบ Capacity และ Time Window Feasibility ตามเงื่อนไขของโจทย์
 
-*คำตอบทั้งหมดผ่านการตรวจสอบความถูกต้องของ Capacity และ Time Windows อย่างสมบูรณ์ 100%*
-
-**การตรวจสอบและทำซ้ำ (Reproducibility)**
-- ผลลัพธ์ประมวลผลซ้ำได้ค่าเดิมเสมอแบบ Deterministic
-- ถูกบันทึกและตรวจสอบข้อจำกัดแล้ว 
-- ข้อมูลและ Log ถูกจัดเก็บไว้แบบโปร่งใส  
-**[ดูผลทดสอบและ Log ของโมดูล VRPTW](https://github.com/CT1-demo-goG/GSL-VRPTW-Portfolio)**
+🔗 **[View VRPTW Benchmark Portfolio & Logs](https://github.com/CT1-demo-goG/GSL-VRPTW-Portfolio)**
 
 ---
 
-## ความสำเร็จขั้นที่ 3: การทดสอบ MDVRP
-**โมดูล: GSL_MDVRP_MASTER_V28**
+## Milestone 3: MDVRP Benchmark
 
-แสดงความเร็วการประมวลผลระดับโลก และการตรวจสอบการจัดสายรถแบบหลายศูนย์กระจายสินค้า (Multi-Depot) บนสถาปัตยกรรมมือถือ
+**Module:** `GSL_MDVRP_MASTER_V28`
 
-- **Extreme Scale Stress Test:** แก้ปัญหาเครือข่าย MDVRP ขนาดมหาศาลที่ **10,000 โหนด และ 100 ศูนย์กระจายสินค้า** ในเวลาเพียง **8.9 วินาที**
-- **Cordeau Benchmark:** ผ่านการประเมิน 100% สำหรับชุดข้อมูลวิชาการมาตรฐาน (p-series และ pr-series) โดยใช้เวลาเพียงระดับเสี้ยววินาที  
-**[ดูผลทดสอบและ Log ของโมดูล MDVRP](https://github.com/CT1-demo-goG/gsl-mdvrp-engine)**
+- ทดสอบบนโจทย์ MDVRP ขนาดใหญ่ รวมถึงกรณี 10,000 Nodes / 100 Depots บน Mobile Hardware
+- สร้างคำตอบที่ผ่าน Feasibility แบบ Deterministic บนชุดข้อมูล Cordeau p-series และ pr-series
 
----
-
-## ความสำเร็จขั้นที่ 4: การทดสอบ MDVRPTW (กรณีศึกษาจริง & เชิงวิชาการ)
-**โมดูล: GSL_MDVRPTW_V38 & GSL_MDVRPTW_REAL_V29**
-
-นี่คือสถาปัตยกรรมที่ซับซ้อนที่สุดของ GSL รองรับการประมวลผลหลายศูนย์กระจายสินค้า, ข้อจำกัดความจุ 2 มิติ, ถนนวันเวย์ (Asymmetric), และกรอบเวลาเวลาทำงาน (Time Windows) พร้อมกัน
-
-- **กรณีศึกษาเชิงพาณิชย์ (ข้อมูลจากบอสเนีย):** ทดสอบกับชุดข้อมูลจริงของบริษัทกระจายสินค้ารายใหญ่ GSL Engine สามารถเพิ่มประสิทธิภาพระบบเดิม โดยช่วยลดระยะทางวิ่งลง 169.08 กิโลเมตรต่อรอบ **(ลดต้นทุน 31.4%)** โดยใช้เวลาคิดคำนวณเพียง **0.0078 วินาที**
-- **Vidal Large-Scale Benchmark:** สร้างมาตรฐานการประมวลผลบนมือถือใหม่สำหรับชุดข้อมูลขนาดใหญ่ระดับ 960 โหนด  
-**[ดูผลทดสอบและ Log ของโมดูล MDVRPTW](https://github.com/CT1-demo-goG/gsl-mdvrptw-engine)**
+🔗 **[View MDVRP Benchmark Portfolio & Logs](https://github.com/CT1-demo-goG/gsl-mdvrp-engine)**
 
 ---
 
-## กลยุทธ์ทางเทคนิค
-GSL Engine มุ่งเน้นไปที่การจัดโครงสร้างอัจฉริยะแบบเฉพาะเจาะจง หลีกเลี่ยงการสุ่มค้นหาที่ใช้คอมพิวเตอร์ประมวลผลหนัก:
+## Milestone 4: MDVRPTW Benchmark
 
-- **Geometric Sensing:** การจัดกลุ่มเชิงพื้นที่และกำหนดเส้นทางผ่านตรรกะทางเรขาคณิต
-- **Deterministic Vehicle Minimization (K-Focus):** การให้ความสำคัญกับการลดจำนวนรถยนต์ (Fleet reduction) เป็นอันดับแรกก่อนปรับจูนระยะทาง
-- **Temporal Constraint Synchronization:** การประสานข้อมูล Time window อย่างแม่นยำ โดยไม่ทำให้ความซับซ้อนของปัญหาเพิ่มขึ้นแบบทวีคูณ (Exponential growth)
-- **Universal Parsing Core:** ระบบอ่านและจัดการข้อมูลอัจฉริยะที่รองรับไฟล์หลาย format
+**Modules:** `GSL_MDVRPTW_V38` และ `GSL_MDVRPTW_REAL_V29`
 
----
+- ทดสอบบนชุดข้อมูลจริงที่มี Multi-Depot, Time Windows, Asymmetric Distance และ Dual-Capacity Constraints
+- การทดสอบภายในพบแนวโน้มการลดต้นทุนเส้นทางภายใต้การประมวลผลเชิงกำหนด
+- มีการประเมินเพิ่มเติมบนชุดข้อมูล Vidal (สูงสุด 960 Nodes)
 
-## วิสัยทัศน์
-GSL Engine ถูกออกแบบให้ไม่ใช่แค่อัลกอริทึมแก้ปัญหา แต่เป็น **แกนสมองกลอัจฉริยะที่ขยายสเกลได้ (Scalable routing intelligence core)**:
-
-- จากการประมวลผลบนมือถือ -> สู่การวางระบบบนเซิร์ฟเวอร์
-- จากการแก้โจทย์ Benchmark -> สู่ระบบโลจิสติกส์ในโลกความเป็นจริง
-- จากงานวิจัยต้นแบบ -> สู่แพลตฟอร์มอัปติไมซ์เชิงพาณิชย์
+🔗 **[View MDVRPTW Benchmark Portfolio & Logs](https://github.com/CT1-demo-goG/gsl-mdvrptw-engine)**
 
 ---
 
-## แพลตฟอร์ม GSL-Solver
-**พอร์ทัลอัปติไมซ์เส้นทางระดับองค์กร (Enterprise Route Optimization Portal)**
-เข้าใช้งานเอนจิน Deterministic ระดับโปรดักชันที่พร้อมใช้งานจริงได้ที่นี่:  
-**[https://gsl-solver.com](https://gsl-solver.com)**
+## Research & Architecture Notes
+
+### Deterministic Single-Pass Routing Architecture
+
+Repository นี้ยังรวมเอกสารเชิงสำรวจ (Exploratory Technical Notes) เกี่ยวกับ:
+
+- deterministic routing execution
+- low-latency dispatch systems
+- edge-constrained VRP computation
+- variance-free execution behavior
+- mobile-scale logistics optimization
+
+📄 `Docs/deterministic_single_pass_whitepaper.md`
 
 ---
 
-## ข้อมูลการติดต่อ
-**นักวิจัยอิสระ (Independent Researcher):** ชนม์ภูมิ ธรรมสุวรรณ (CTSuwan)  
-**อีเมล:** [ctsuwan@proton.me](mailto:ctsuwan@proton.me)  
+## Technical Strategy
+
+- **Geometric Sensing:** การจัดกลุ่มเชิงพื้นที่และการเริ่มต้นเส้นทางแบบ Deterministic
+- **Adaptive Fleet Structuring:** การกระจายภาระงานและจัดความหนาแน่นของ Capacity แบบ Dynamic
+- **Universal Parsing Core:** ระบบอ่าน Dataset หลายรูปแบบพร้อมการตรวจจับโครงสร้างอัตโนมัติ
 
 ---
 
-## บริการและความร่วมมือทางธุรกิจ
-เปิดรับการร่วมงานและให้คำปรึกษาระดับมืออาชีพ ในขอบเขตดังต่อไปนี้:
+## ขอบเขตปัญหาและรายละเอียด Benchmark
 
-- **Logistics-as-a-Service (LaaS):** บริการระบบประมวลผลเส้นทางแบบเรียลไทม์สำหรับฟลีทรถขนส่งระดับองค์กร
-- **High-Precision Modeling:** การออกแบบและพัฒนาอัลกอริทึมเฉพาะทาง สำหรับแก้ปัญหาซัพพลายเชนที่มีเงื่อนไข (Constraints) ซับซ้อนขั้นสูง
-- **Technical Consultancy:** บริการให้คำปรึกษาทางเทคนิค, ทดสอบขีดจำกัดระบบเครือข่ายขนาดใหญ่ (Stress-testing) และการตรวจสอบประเมินประสิทธิภาพการจัดเส้นทาง (Optimization audits)
+แกนการคำนวณหลักของ GSL Engine ถูกออกแบบสำหรับปัญหา **Capacitated Vehicle Routing Problem (CVRP)** ภายใต้แนวทางการประมวลผลเชิงกำหนด
+
+เป้าหมายหลักของระบบประกอบด้วย:
+- การใช้ความจุรถให้เกิดประสิทธิภาพสูงสุด
+- การรักษา Feasibility ของเส้นทาง
+- การลดระยะทางรวมของระบบขนส่ง
+
+### หมายเหตุเกี่ยวกับ Legacy Benchmarks (เช่น CMT Series)
+
+Benchmark บางชุด เช่น Christofides / CMT มีข้อจำกัดเพิ่มเติมแฝงอยู่ เช่น Route Distance Ceiling
+
+ผลลัพธ์บางส่วนใน Repository นี้จึงสะท้อนการประเมินภายใต้เงื่อนไข Capacity-Constrained เป็นหลัก เว้นแต่จะระบุเพิ่มเติมไว้โดยเฉพาะ
+
+ปัญหาที่ต้องควบคุมข้อจำกัดด้านเวลาและระยะทางอย่างเข้มงวด จะถูกแยกไปประเมินในระบบเฉพาะทาง เช่น:
+- VRPTW
+- MDVRPTW
+
+เพื่อรักษาความเป็น Modular และประสิทธิภาพการประมวลผลของแต่ละระบบ
+
+---
+
+## GSL-Solver Platform
+
+**Deterministic Routing Platform**
+
+เข้าถึงแพลตฟอร์มได้ที่:
+
+https://gsl-solver.com
+
+---
+
+## Professional Contact
+
+**Independent Researcher:** Chonmapoohm Thamsuwan (CTSuwan)  
+📧 ctsuwan@proton.me
