@@ -1,53 +1,68 @@
 [อ่านภาษาไทยคลิกที่นี่](README_TH.md)
+
 # GSL Engine
-**A high-performance deterministic optimization engine for the Vehicle Routing Problem (VRP).**
+**A deterministic optimization architecture for the Vehicle Routing Problem (VRP).**
 
-The GSL Engine (Geo Strategy Logistic Engine) is a proprietary computational core designed to solve complex logistics optimization problems with strong efficiency and absolute determinism. This repository serves as the central performance portfolio, showcasing benchmark verification, execution logs, and multi-variant capabilities.
+The GSL Engine (Geo Strategy Logistic Engine) is a proprietary computational architecture designed to explore scalable and deterministic approaches for complex logistics optimization problems. This repository serves as a centralized performance and research portfolio, showcasing benchmark evaluations, execution logs, and multi-variant routing capabilities.
 
-**Disclaimer:** Source code is proprietary and not publicly available. This project is open for research collaboration and industrial applications.
+**Disclaimer:** Source code is proprietary and not publicly available. This project is open to research collaboration, technical discussion, and industrial exploration.
 
 ---
 
 ## Engine Architecture & Supported Variants
-The GSL Engine is modular and designed to support multiple VRP variants with 100% deterministic feasibility:
 
-- **CVRP (Capacitated VRP)** Module: `GSL_CVRP_V22` -> Deployed & Verified
-- **VRPTW (VRP with Time Windows)** Module: `GSL_VRPTW_V111` -> Deployed & Verified
-- **MDVRP (Multi-Depot VRP)** Module: `GSL_MDVRP_MASTER_V28` -> Deployed & Verified
-- **MDVRPTW (Multi-Depot VRP with Time Windows)** Modules: `GSL_MDVRPTW_V38` & `GSL_MDVRPTW_REAL_V29` -> Deployed & Verified
-- **PDPTW (Pickup & Delivery with Time Windows)** Status: Development (Core Logic Completed)
+The GSL Engine is modular and designed to support multiple VRP variants through deterministic feasibility-oriented execution:
+
+- **CVRP (Capacitated VRP)** Module: `GSL_CVRP_V22`
+- **VRPTW (VRP with Time Windows)** Module: `GSL_VRPTW_V111`
+- **MDVRP (Multi-Depot VRP)** Module: `GSL_MDVRP_MASTER_V28`
+- **MDVRPTW (Multi-Depot VRP with Time Windows)** Modules: `GSL_MDVRPTW_V38` & `GSL_MDVRPTW_REAL_V29`
+- **PDPTW (Pickup & Delivery with Time Windows)** Status: Development Phase (Core Logic Completed)
 
 ---
 
 ## Execution Environment
+
 - **Platform:** Android (Mobile Edge)
 - **Runtime:** Python via Pydroid 3
 - **CPU:** Snapdragon Architecture (ARM-based)
-- **Execution Mode:** High-Speed Sequential / Batch Processing
-- **Constraint Handling:** Fully deterministic feasibility validation (Zero Stochastic Variance)
+- **Execution Mode:** Sequential / Batch Processing
+- **Constraint Handling:** Deterministic feasibility validation with zero stochastic sampling
 
 ---
 
 ## Milestone 1: CVRP Benchmark (CVRPLib-Based)
-**Module: GSL_CVRP_V22**
 
-**Zero-Tuning Policy:** A single unified script was used across all datasets without instance-specific parameter tuning, demonstrating superior algorithmic generalization.
+**Module:** `GSL_CVRP_V22`
 
-### **Detailed Performance Repositories**
-To maintain transparency and data integrity, detailed benchmarks are separated into specialized repositories:
+### Zero-Tuning Policy
+A unified execution configuration was used across all datasets without instance-specific parameter tuning, demonstrating consistent cross-dataset execution behavior.
 
-* 📁 **[GSL-CVRP-SETX](https://github.com/CT1-deMo-goG/GSL-CVRP-SETX)**: Focuses on the Uchoa Set X (100 - 1,000 nodes). Verified 100% Feasible.
-* 📁 **[GSL-CVRP-SETXL](https://github.com/CT1-deMo-goG/GSL-CVRP-SETXL)**: Focuses on Hyper-Scale instances (1,000 - 10,001 nodes). Verified 100% Feasible.
+### Detailed Performance Repositories
 
-### **Hyper-Scale Sample (Set XL)**
-The engine successfully solved extreme-scale instances on a mobile device with verified feasibility:
+To maintain benchmark transparency and repository organization, detailed evaluations are separated into specialized repositories:
 
-| Instance | GSL Cost (Feasible) | Recorded BKS | Gap (%) | Status |
+* 📁 **[GSL-CVRP-SETX](https://github.com/CT1-deMo-goG/GSL-CVRP-SETX)**  
+  Uchoa Set X benchmark evaluations (100 - 1,000 nodes)
+
+* 📁 **[GSL-CVRP-SETXL](https://github.com/CT1-deMo-goG/GSL-CVRP-SETXL)**  
+  Hyper-scale benchmark evaluations (1,000 - 10,001 nodes)
+
+---
+
+### Hyper-Scale Sample (Set XL)
+
+The engine produced feasible solutions for large-scale benchmark instances on mobile-class hardware:
+
+| Instance | GSL Cost | Recorded BKS | Gap (%) | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **XL-n5406-k783** | 1,050,660.38 | 1,040,536.0 | +0.97% | FEASIBLE |
-| **XL-n10001-k1570** | 2,432,382.86 | 2,333,757.0 | +4.23% | FEASIBLE (+63) |
+| XL-n5406-k783 | 1,050,660.38 | 1,040,536.0 | +0.97% | FEASIBLE |
+| XL-n10001-k1570 | 2,432,382.86 | 2,333,757.0 | +4.23% | FEASIBLE |
 
-**Dataset Coverage Summary**
+---
+
+### Dataset Coverage Summary
+
 | Dataset | Instances | Avg. Gap to BKS | Avg. Runtime |
 | :--- | :--- | :--- | :--- |
 | Set X (Uchoa) | 100 | ~7.5% | 0.20s – 1.00s |
@@ -55,61 +70,104 @@ The engine successfully solved extreme-scale instances on a mobile device with v
 | Set Tai (Taillard) | 13 | ~4.5% | < 0.30s |
 | Set CMT | 14 | ~3.0% | < 0.10s |
 
-**Proof of Execution:** [Video Demonstration (10,000 Instances Run)](https://youtu.be/rsIjlrckyxw)
+---
+
+### Proof of Execution
+
+📹 **[Video Demonstration (10,000 Instances Run)](https://youtu.be/rsIjlrckyxw)**
 
 ---
 
 ## Milestone 2: VRPTW Benchmark
-**Module: GSL_VRPTW_V111**
-Evaluated on Solomon and Homberger benchmarks using the same zero-tuning approach. All solutions are fully feasible (Capacity + Time Windows verified).
 
-**[View VRPTW Benchmark Portfolio & Logs](https://github.com/CT1-demo-goG/GSL-VRPTW-Portfolio)**
+**Module:** `GSL_VRPTW_V111`
+
+Evaluated on Solomon and Homberger benchmark families using the same zero-tuning execution strategy. Reported solutions satisfy capacity and time-window feasibility constraints under the tested configurations.
+
+🔗 **[View VRPTW Benchmark Portfolio & Logs](https://github.com/CT1-demo-goG/GSL-VRPTW-Portfolio)**
 
 ---
 
 ## Milestone 3: MDVRP Benchmark
-**Module: GSL_MDVRP_MASTER_V28**
-- **Extreme Scale:** Solved a 10,000-node, 100-depot MDVRP network in **8.9 seconds**.
-- **Cordeau Benchmark:** Achieved 100% deterministic feasibility across p-series and pr-series.
 
-**[View MDVRP Benchmark Portfolio & Logs](https://github.com/CT1-demo-goG/gsl-mdvrp-engine)**
+**Module:** `GSL_MDVRP_MASTER_V28`
+
+- Evaluated on large-scale MDVRP scenarios, including a 10,000-node / 100-depot stress test executed on mobile hardware.
+- Produced deterministic feasible solutions across evaluated Cordeau p-series and pr-series benchmark instances.
+
+🔗 **[View MDVRP Benchmark Portfolio & Logs](https://github.com/CT1-demo-goG/gsl-mdvrp-engine)**
 
 ---
 
 ## Milestone 4: MDVRPTW Benchmark
-**Modules: GSL_MDVRPTW_V38 & GSL_MDVRPTW_REAL_V29**
-- **Commercial Case Study:** Optimized a real-world distribution dataset, achieving a **31.4% cost reduction** in 0.0078 seconds.
-- **Vidal Benchmark:** Established mobile execution baselines for large-scale datasets (up to 960 nodes).
 
-**[View MDVRPTW Benchmark Portfolio & Logs](https://github.com/CT1-demo-goG/gsl-mdvrptw-engine)**
+**Modules:** `GSL_MDVRPTW_V38` & `GSL_MDVRPTW_REAL_V29`
+
+- Evaluated using real-world logistics datasets involving multi-depot routing, time windows, asymmetric distances, and dual-capacity constraints.
+- Internal deployment testing observed measurable routing cost reductions under deterministic execution conditions.
+- Additional benchmark evaluations were conducted on Vidal dataset families (up to 960 nodes).
+
+🔗 **[View MDVRPTW Benchmark Portfolio & Logs](https://github.com/CT1-demo-goG/gsl-mdvrptw-engine)**
+
+---
+
+## Research & Architecture Notes
+
+### Deterministic Single-Pass Routing Architecture
+
+This project also includes exploratory technical notes discussing:
+
+- deterministic routing execution,
+- low-latency dispatch systems,
+- edge-constrained VRP computation,
+- variance-free execution behavior,
+- and mobile-scale logistics optimization.
+
+📄 `Docs/deterministic_single_pass_whitepaper.md`
 
 ---
 
 ## Technical Strategy
-- **Geometric Sensing:** Spatial clustering and route initialization via deterministic logic.
-- **Adaptive Fleet Structuring:** Dynamic workload balancing and high-density capacity packing to guarantee robust operational feasibility before executing structural distance refinement.
-- **Universal Parsing Core:** Robust ingestion of multiple data formats with auto-K detection.
+
+- **Geometric Sensing:** Spatial clustering and deterministic route initialization.
+- **Adaptive Fleet Structuring:** Dynamic workload balancing and capacity-oriented route construction.
+- **Universal Parsing Core:** Multi-format dataset ingestion with automatic structural parsing.
 
 ---
 
 ## Problem Scope & Benchmark Specifications
 
-The core optimization module of the Geo Strategy Logistic (GSL) Engine is engineered strictly for the standard **Capacitated Vehicle Routing Problem (CVRP)**, focusing on maximizing fleet capacity utilization and minimizing overall Travel Distance (TD) under uniform demand profiles.
+The core optimization layer of the GSL Engine is designed primarily for the standard **Capacitated Vehicle Routing Problem (CVRP)** under deterministic execution constraints.
 
-### Technical Note on Legacy Benchmarks (e.g., CMT Series):
-* Certain legacy problem sets, such as the Christofides (CMT) series, contain multi-constraint profiles including implicit distance-duration ceilings (`DISTANCE` limits).
-* Current evaluation logs for these specific instances reflect the engine's performance under a **Capacity-Constrained Only** environment.
-* Advanced routing problems that require strict distance-ceiling enforcement or time-window integration are systematically separated into specialized routing layers (such as VRPTW / MDVRPTW modules) to maintain maximum computation speed and code modularity.
+Primary optimization targets include:
+- fleet capacity utilization,
+- routing feasibility,
+- and total travel distance minimization.
 
-*
+### Technical Note on Legacy Benchmarks (e.g., CMT Series)
+
+Certain historical benchmark families (such as Christofides / CMT datasets) contain additional implicit constraints including route-distance ceilings.
+
+Current evaluation logs for these instances reflect execution under a capacity-constrained interpretation unless otherwise specified.
+
+Problems requiring strict duration ceilings or chronological feasibility enforcement are evaluated separately through specialized routing layers such as:
+- VRPTW
+- MDVRPTW
+
+This separation is intended to preserve modularity and maintain computational efficiency across different routing environments.
+
 ---
+
 ## GSL-Solver Platform
-**The Enterprise Route Optimization Portal** Access the production-ready engine here: [**https://gsl-solver.com**](https://gsl-solver.com)
+
+**Deterministic Routing Platform**  
+Access the platform here:
+
+https://gsl-solver.com
 
 ---
 
 ## Professional Contact
+
 **Independent Researcher:** Chonmapoohm Thamsuwan (CTSuwan)  
-**Email:** [ctsuwan@proton.me](mailto:ctsuwan@proton.me) 
-
-
+📧 ctsuwan@proton.me
